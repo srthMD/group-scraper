@@ -63,25 +63,29 @@ def get_group_ids():
                 for id in group_ids:
                     print(id)
             case _:
-                # TODO allow for multiple ids to be inputted with commas
-                result = validate_group_id(user_input)
-                if result[0]:
-                    group_ids.add(user_input)
-                else:
-                    print(result[1])
+                group_ids = group_ids.union(validate_group_ids(user_input))
     
-def validate_group_id(id):
-    try:
-         int(id)
-    except ValueError:
-        return (False, "Id cannot have letters.")
+def validate_group_ids(id):
+    valid_ids = set()
 
-    response = requests.get(f"https://groups.roblox.com/v1/groups/{id}")
+    split_input = str(id).replace(" ", "").split(",")
 
-    if response.status_code == 400:
-        return (False, "The group id does not exist.")
-    
-    return (True,)
+    for possible_id in split_input:  
+        try:
+            int(possible_id)
+        except ValueError:
+            print(f"{possible_id} is not a valid id, ignoring id.")
+            continue
+
+        response = requests.get(f"https://groups.roblox.com/v1/groups/{possible_id}")
+
+        if response.status_code == 400:
+            print(f"The group id {possible_id} does not exist, ignoring id")
+            continue
+
+        valid_ids.add(possible_id)
+
+    return valid_ids
 
 if __name__ == "__main__":
     all_members = set()
