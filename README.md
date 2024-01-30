@@ -19,4 +19,5 @@ Avoid using letters unless typing in a command, any ID that has a letter will be
 When you have input all the ID's you want, type 'done' and the script will run and dump its outputs to a txt file.
 
 ## Purpose
+
 The purpose of this is to make the original script more user-friendly and add quality of life changes while also expanding the script independently from the original [M4D repository](https://github.com/Moderation4Dummies/ERP-Scraper).

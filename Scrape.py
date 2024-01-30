@@ -48,9 +48,12 @@ def get_group_ids():
     while True:
         print(">", end=" ")
         user_input = input()
-        match user_input:
+        args = user_input.split(" ")
+        match args[0]:
             case "help":
                 print("list - Prints a list of all the ids inputted.")
+                print("rem <\033[35mid\033[0m> - Removes an id from the input.")
+                print("del <\033[35mid\033[0m> - Same as rem.")
             case "done":
                 if not group_ids:
                     print("You must input at least one group id!")
@@ -62,8 +65,20 @@ def get_group_ids():
                     continue
                 for id in group_ids:
                     print(id)
+            case "rem" | "del":
+                try:
+                    argid = args[1]
+                except IndexError:
+                    print("ID cannot be blank!")
+                    continue
+
+                if argid in group_ids:
+                    group_ids.remove(args[1])
+                else:
+                    print(f"Cannot find {args[1]} in inputted ids.")
+                    continue
             case _:
-                group_ids = group_ids.union(validate_group_ids(user_input))
+                group_ids = group_ids.union(validate_group_ids(args[0]))
     
 def validate_group_ids(id):
     valid_ids = set()
