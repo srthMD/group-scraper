@@ -44,7 +44,7 @@ def count_group_ids(members_groups, exclude_group_ids):
 
 def get_group_ids():
     group_ids = set()
-    print("Input a valid roblox group id or multiple ids seperated by a comma. \nType \033[32m\033[5mdone\033[0m to stop prompting ids and run the script.\nType \033[32m\033[5mhelp\033[0m for a list of commands.")
+    print("Input a valid Roblox group id or multiple ids separated by a comma. \nType \033[32m\033[5mdone\033[0m to stop prompting ids and run the script.\nType \033[32m\033[5mhelp\033[0m for a list of commands.")
     while True:
         print(">", end=" ")
         user_input = input()
@@ -53,7 +53,7 @@ def get_group_ids():
                 print("list - Prints a list of all the ids inputted.")
             case "done":
                 if not group_ids:
-                    print("You must input atleast one group id!")
+                    print("You must input at least one group id!")
                     continue
                 return group_ids
             case "list":
