@@ -4,7 +4,7 @@ Read the original README [here](https://github.com/Moderation4Dummies/ERP-Scrape
 
 ## Usage
 
-❗**This script is meant to run in a terminal that supports ASCII escape codes.**
+❗**This script is meant to run in a terminal that supports the UTF-8 character set.**
 
 ❗**It is recommended to run with the latest version of Python.**  
   
