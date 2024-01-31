@@ -235,3 +235,6 @@ if __name__ == "__main__":
             outfile.write(f"{group.name} - https://www.roblox.com/groups/{group.id}/x - {count}" + "occurrence. \n" if count == 1 else "occurrences. \n")
 
     print(f"Processing complete. Results saved to {outfile.name}")
+    print("Exiting in 5 seconds...")
+    time.sleep(5)
+    os._exit(1)
