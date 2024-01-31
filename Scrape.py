@@ -119,7 +119,6 @@ def count_group_ids(members, excluded_groups) -> list[tuple[Group, int]]:
       for groups in members:
           for group in groups:
               if group not in excluded_groups:
-                  print(group.id)
                   group_count[group] = group_count.get(group, 0) + 1
       return sorted(group_count.items(), key=lambda x: x[1], reverse=True)
 
