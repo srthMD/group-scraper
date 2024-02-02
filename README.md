@@ -4,9 +4,9 @@ Read the original README [here](https://github.com/Moderation4Dummies/ERP-Scrape
 
 ## Usage
 
-❗**This script is meant to run in a terminal that supports the UTF-8 character set.**
-
-❗**It is recommended to run with the latest version of Python.**  
+> [!CAUTION]
+> **This script is meant to run in a terminal that supports the UTF-8 character set.**  
+> **It is recommended to run with the latest version of Python.**  
   
 On startup, you will be prompted to enter valid Roblox group ID's as sample groups. Valid ways of input are as following:
 
